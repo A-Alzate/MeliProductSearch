@@ -17,11 +17,12 @@ class ProductRepository: ProductRepositoryProtocol {
     }
     
     func fetchProductBySearch(text: String) async throws -> [Product] {
-        guard let request = requestBuilder.url("/").build() else {
+        guard let request = requestBuilder.url("/sites/MLA/search?q=\(text)").build() else {
             throw BadRequest()
         }
         
-        let productsDto: [ProductDTO] = try await client.request(request: request)
+        let response: SearchResponseDTO = try await client.request(request: request)
+        let productsDto = response.results
         
         return productsDto.map { $0.dtoToModel() }
     }

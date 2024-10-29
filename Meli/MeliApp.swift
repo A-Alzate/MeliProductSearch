@@ -11,7 +11,7 @@ import SwiftUI
 struct MeliApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DashboardView(viewModel: DashboardViewModel(fetchProductsBySearchUseCase: FetchProductsBySearchUseCase(repository: ProductRepository(requestBuilder: RequestBuilder(), client: HTTPClient()))) )
         }
     }
 }

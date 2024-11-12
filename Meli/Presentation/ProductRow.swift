@@ -12,7 +12,8 @@ struct ProductRow: View {
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: product.thumbnail)) { phase in
+            let imageUrl = product.thumbnail.replacing("http:", with: "https:")
+            AsyncImage(url: URL(string: imageUrl)) { phase in
                 switch phase {
                 case .success(let image):
                     image.resizable()

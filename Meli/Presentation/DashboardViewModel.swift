@@ -8,7 +8,7 @@
 import Foundation
 
 class DashboardViewModel: ObservableObject {
-    @Published var products: [Product]? = []
+    @Published var products: Set<Product>? = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     private var paging: Paging? = nil
@@ -24,7 +24,7 @@ class DashboardViewModel: ObservableObject {
         Task {
             do {
                 let response = try await fetchProducts(text: text, offset: 0)
-                self.products = response.products
+                self.products = Set(response.products)
                 self.paging = response.paging
             } catch (let error) {
                 self.errorMessage = error.localizedDescription
@@ -38,13 +38,14 @@ class DashboardViewModel: ObservableObject {
             do {
                 try validateIfNeeded(index: index)
                 let response = try await fetchProductsBySearchUseCase.exec(text: text, offset: products?.count ?? 0)
-                self.products?.append(contentsOf: response.products)
+                self.products?.formUnion(response.products)
             } catch (let error) {
                 self.errorMessage = error.localizedDescription
             }
         }
     }
     
+    @MainActor
     private func fetchProducts(text: String, offset: Int) async throws -> SearchResponse {
         try validateSearch(text: text)
         isLoading = true

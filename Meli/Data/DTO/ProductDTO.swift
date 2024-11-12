@@ -10,7 +10,7 @@ import Foundation
 struct ProductDTO: Codable, Equatable {
     let id: String
     let title: String
-    let price: Int
+    let price: Double
     let currencyId: String
     let thumbnail: String
     

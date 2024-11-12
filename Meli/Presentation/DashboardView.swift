@@ -24,7 +24,7 @@ struct DashboardView: View {
             
             if let products = viewModel.products?.enumerated().map({ $0 }) {
                 List(products, id: \.element.id) { index, product in
-                    Text("\(index)" + product.title)
+                    ProductRow(product: product)
                         .onAppear {
                             viewModel.fetchMoreProductIfNeeded(text: searchText, index: index + 1)
                         }

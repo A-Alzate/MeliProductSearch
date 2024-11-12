@@ -13,7 +13,7 @@ final class ApiClientStub: ApiClient {
     
     func request<T>(request: URLRequest) async throws -> T where T : Decodable, T : Encodable {
         if returnSuccess {
-            return ProductDTOFakeData.createData() as! T
+            return SearchResponseDTOFakeData.createData() as! T
         } else {
             throw BadRequest()
         }

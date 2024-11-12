@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ProductRepositoryProtocol {
-    func fetchProductBySearch(text: String) async throws -> [Product]
+    func fetchProductBySearch(text: String, offset: Int) async throws -> SearchResponse
 }

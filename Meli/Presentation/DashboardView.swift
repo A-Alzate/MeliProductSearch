@@ -18,14 +18,23 @@ struct DashboardView: View {
                 .background(Color.gray)
                 .padding(.horizontal)
                 .onChange(of: searchText) { oldValue, newValue in
-                    if newValue.count > 3 {
-                        viewModel.fetchProducts(text: newValue)
-                    }
+                    searchText = newValue
+                    viewModel.searchProducts(text: newValue)
                 }
             
-            List(viewModel.products) { product in
-                Text(product.title)
-            }.listStyle(.plain)
+            if let products = viewModel.products?.enumerated().map({ $0 }) {
+                List(products, id: \.element.id) { index, product in
+                    Text("\(index)" + product.title)
+                        .onAppear {
+                            viewModel.fetchMoreProductIfNeeded(text: searchText, index: index + 1)
+                        }
+                }.overlay(content: {
+                    if viewModel.isLoading {
+                        ProgressView()
+                    }
+                })
+                .listStyle(.plain)
+            }
             
         }
         .padding()

@@ -11,9 +11,9 @@ import Foundation
 class ProductRepositoryStub: ProductRepositoryProtocol {
     var returnSuccess: Bool = true
     
-    func fetchProductBySearch(text: String) async throws -> [Product] {
+    func fetchProductBySearch(text: String, offset: Int) async throws -> SearchResponse {
         if returnSuccess {
-            return ProductFakeData.createData()
+            return SearchResponseFakeData.createData()
         } else {
             throw BadRequest()
         }

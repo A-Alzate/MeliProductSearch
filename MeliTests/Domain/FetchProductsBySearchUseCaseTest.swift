@@ -28,18 +28,18 @@ class FetchProductsBySearchUseCaseTest: XCTestCase {
         //Given
         repositoryStub.returnSuccess = true
         //When
-        let products = try? await sut.exec(text: "test")
+        let response = try? await sut.exec(text: "test", offset: 0)
         //Then
-        XCTAssertEqual(products?.count, ProductFakeData.createData().count)
-        XCTAssertEqual(products, ProductFakeData.createData())
+        XCTAssertEqual(response?.products, SearchResponseFakeData.createData().products)
+        XCTAssertEqual(response?.paging, SearchResponseFakeData.createData().paging)
     }
     
     func testUseCase_WhenExecFetchProductBySearch_ThrowsError() async {
         //Given
         repositoryStub.returnSuccess = false
         //When
-        let products = try? await sut.exec(text: "test")
+        let response = try? await sut.exec(text: "test", offset: 0)
         //Then
-        XCTAssertNil(products)
+        XCTAssertNil(response)
     }
 }

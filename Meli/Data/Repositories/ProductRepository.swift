@@ -16,15 +16,13 @@ class ProductRepository: ProductRepositoryProtocol {
         self.client = client
     }
     
-    func fetchProductBySearch(text: String) async throws -> [Product] {
-        guard let request = requestBuilder.url("/sites/MLA/search?q=\(text)").build() else {
+    func fetchProductBySearch(text: String, offset: Int) async throws -> SearchResponse {
+        guard let request = requestBuilder.url("/sites/MCO/search?q=\(text)&offset=\(offset)").build() else {
             throw BadRequest()
         }
         
         let response: SearchResponseDTO = try await client.request(request: request)
-        let productsDto = response.results
-        
-        return productsDto.map { $0.dtoToModel() }
+        return response.dtoToModel()
     }
 }
 

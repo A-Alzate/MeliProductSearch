@@ -30,16 +30,16 @@ class ProductRepositoryTest: XCTestCase {
         //Given
         apiClient.returnSuccess = true
         //When
-        let products = try? await sut.fetchProductBySearch(text: "example")
+        let response = try? await sut.fetchProductBySearch(text: "example", offset: 0)
         //Then
-        XCTAssertEqual(products?.count, 4)
+        XCTAssertEqual(response?.products.count, 4)
     }
     
     func testFetchProduct_WhenSearchBytext_ThrowsError() async {
         //Given
         apiClient.returnSuccess = false
         //When
-        let products = try? await sut.fetchProductBySearch(text: "example")
+        let products = try? await sut.fetchProductBySearch(text: "example", offset: 0)
         //Then
         XCTAssertNil(products)
     }

@@ -14,7 +14,7 @@ class FetchProductsBySearchUseCase {
         self.repository = repository
     }
     
-    func exec(text: String) async throws -> [Product] {
-        return try await repository.fetchProductBySearch(text: text)
+    func exec(text: String, offset: Int) async throws -> SearchResponse {
+        return try await repository.fetchProductBySearch(text: text, offset: offset)
     }
 }

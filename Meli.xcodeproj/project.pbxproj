@@ -20,8 +20,9 @@
 		8409CF482CCEA06C008AB02E /* FetchProductsBySearchUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409CF472CCEA06C008AB02E /* FetchProductsBySearchUseCaseTest.swift */; };
 		8409CF4A2CCEA0CA008AB02E /* ProductRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409CF492CCEA0CA008AB02E /* ProductRepositoryStub.swift */; };
 		8409CF4C2CCEA163008AB02E /* SearchResponseFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409CF4B2CCEA163008AB02E /* SearchResponseFakeData.swift */; };
+		842AC3DB2CE2FF4E005F22DF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 842AC3DA2CE2FF4E005F22DF /* Localizable.xcstrings */; };
+		842AC3DD2CE300FC005F22DF /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842AC3DC2CE300FC005F22DF /* LocalizedStrings.swift */; };
 		843632F92CCC923F0027CF88 /* MeliApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843632F82CCC923F0027CF88 /* MeliApp.swift */; };
-		843632FB2CCC923F0027CF88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843632FA2CCC923F0027CF88 /* ContentView.swift */; };
 		843632FD2CCC92420027CF88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843632FC2CCC92420027CF88 /* Assets.xcassets */; };
 		843633002CCC92420027CF88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843632FF2CCC92420027CF88 /* Preview Assets.xcassets */; };
 		8436330A2CCC92420027CF88 /* MeliTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843633092CCC92420027CF88 /* MeliTests.swift */; };
@@ -70,9 +71,10 @@
 		8409CF472CCEA06C008AB02E /* FetchProductsBySearchUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProductsBySearchUseCaseTest.swift; sourceTree = "<group>"; };
 		8409CF492CCEA0CA008AB02E /* ProductRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepositoryStub.swift; sourceTree = "<group>"; };
 		8409CF4B2CCEA163008AB02E /* SearchResponseFakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseFakeData.swift; sourceTree = "<group>"; };
+		842AC3DA2CE2FF4E005F22DF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		842AC3DC2CE300FC005F22DF /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		843632F52CCC923F0027CF88 /* Meli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meli.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		843632F82CCC923F0027CF88 /* MeliApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeliApp.swift; sourceTree = "<group>"; };
-		843632FA2CCC923F0027CF88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		843632FC2CCC92420027CF88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		843632FF2CCC92420027CF88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		843633052CCC92420027CF88 /* MeliTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeliTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,9 +217,10 @@
 				843633232CCC92630027CF88 /* Domain */,
 				843633222CCC925E0027CF88 /* Data */,
 				843632F82CCC923F0027CF88 /* MeliApp.swift */,
-				843632FA2CCC923F0027CF88 /* ContentView.swift */,
 				843632FC2CCC92420027CF88 /* Assets.xcassets */,
 				843632FE2CCC92420027CF88 /* Preview Content */,
+				842AC3DA2CE2FF4E005F22DF /* Localizable.xcstrings */,
+				842AC3DC2CE300FC005F22DF /* LocalizedStrings.swift */,
 			);
 			path = Meli;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = 843632EC2CCC923F0027CF88;
 			productRefGroup = 843632F62CCC923F0027CF88 /* Products */;
@@ -422,6 +426,7 @@
 			files = (
 				843633002CCC92420027CF88 /* Preview Assets.xcassets in Resources */,
 				843632FD2CCC92420027CF88 /* Assets.xcassets in Resources */,
+				842AC3DB2CE2FF4E005F22DF /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,12 +457,12 @@
 				8436332A2CCC93F20027CF88 /* RequestBuilder.swift in Sources */,
 				8409CF2E2CCD4737008AB02E /* ProductRepository.swift in Sources */,
 				84F70D062CE2C59C00F44FCF /* SearchResponse.swift in Sources */,
-				843632FB2CCC923F0027CF88 /* ContentView.swift in Sources */,
 				8409CF2F2CCD4737008AB02E /* ProductDTO.swift in Sources */,
 				84F70D042CE2C4D000F44FCF /* Paging.swift in Sources */,
 				84513A942CD074A6008DDCA8 /* DashboardView.swift in Sources */,
 				843632F92CCC923F0027CF88 /* MeliApp.swift in Sources */,
 				8409CF362CCD5213008AB02E /* FetchProductsBySearchUseCase.swift in Sources */,
+				842AC3DD2CE300FC005F22DF /* LocalizedStrings.swift in Sources */,
 				84F70D002CD1208200F44FCF /* ProductRow.swift in Sources */,
 				8409CF332CCD4782008AB02E /* ProductRepositoryProtocol.swift in Sources */,
 				84F70D022CE2C42D00F44FCF /* PagingDTO.swift in Sources */,

@@ -14,7 +14,7 @@ struct DashboardView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                TextField("Buscar...", text: $searchText)
+                TextField(Strings.Dashboard.searchBarTitle, text: $searchText)
                     .padding(8)
                     .background(Color.gray.secondary)
                     .padding(.horizontal)
@@ -41,7 +41,7 @@ struct DashboardView: View {
                 
             }
             .padding()
-            .navigationTitle("Buscador")
+            .navigationTitle(Strings.Dashboard.title)
         }
     }
 }

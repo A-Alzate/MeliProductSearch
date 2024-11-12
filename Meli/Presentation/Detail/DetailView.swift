@@ -37,7 +37,7 @@ struct DetailView: View {
             Button(action: {
                 print("Comprar \(product.title)")
             }) {
-                Text("Comprar Ahora")
+                Text(Strings.Detail.buyNowButtonTitle)
                     .font(.headline)
                     .foregroundColor(.white)
                     .padding()
@@ -48,7 +48,7 @@ struct DetailView: View {
             Button(action: {
                 print("Agregar al carrito \(product.title)")
             }) {
-                Text("Agregar al carrito")
+                Text(Strings.Detail.addToCartButtonTitle)
                     .font(.headline)
                     .foregroundColor(Color.blue)
                     .padding()

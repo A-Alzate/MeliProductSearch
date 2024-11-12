@@ -169,6 +169,24 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		842AC3D62CE2F29E005F22DF /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				84513A912CD07335008DDCA8 /* DashboardViewModel.swift */,
+				84513A932CD074A6008DDCA8 /* DashboardView.swift */,
+				84F70CFF2CD1208200F44FCF /* ProductRow.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		842AC3D72CE2F2A9005F22DF /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				84F70D072CE2F0D600F44FCF /* DetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		843632EC2CCC923F0027CF88 = {
 			isa = PBXGroup;
 			children = (
@@ -255,10 +273,8 @@
 		843633242CCC926B0027CF88 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				84513A912CD07335008DDCA8 /* DashboardViewModel.swift */,
-				84513A932CD074A6008DDCA8 /* DashboardView.swift */,
-				84F70CFF2CD1208200F44FCF /* ProductRow.swift */,
-				84F70D072CE2F0D600F44FCF /* DetailView.swift */,
+				842AC3D72CE2F2A9005F22DF /* Detail */,
+				842AC3D62CE2F29E005F22DF /* Dashboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
